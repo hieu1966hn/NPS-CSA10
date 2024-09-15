@@ -114,24 +114,47 @@
 # print(eagle.show_info())
 
 
-### chữa bài luyện tập số 1
-class Rectangle:
-    def __init__(self, lenght, width):
-        self.lenght = lenght
-        self.width = width
+# ### chữa bài luyện tập số 1
+# class Rectangle:
+#     def __init__(self, lenght, width):
+#         self.lenght = lenght
+#         self.width = width
     
-    def area(self):
-        return self.lenght * self.width
+#     def area(self):
+#         return self.lenght * self.width
     
-    def perimeter(self):
-        return (self.lenght + self.width) * 2
+#     def perimeter(self):
+#         return (self.lenght + self.width) * 2
     
-class Square(Rectangle):
-    def __init__(self, side):
-        super().__init__(side, side)
+# class Square(Rectangle):
+#     def __init__(self, side):
+#         super().__init__(side, side)
 
     
-### test hình vuông
-s = Square(5)
-print(s.area())
-print(s.perimeter())
+# ### test hình vuông
+# s = Square(5)
+# print(s.area())
+# print(s.perimeter())
+
+
+
+### chữa bài luyện tập số 2
+# class Employee:
+#     def __init__(self, name, salary):
+#         self.name = name
+#         self.salary = salary
+    
+#     def show_info(self):
+#         return f'Employee name: {self.name}, Salary: {self.salary}'
+    
+
+# class Manager(Employee):
+#     def __init__(self, name, salary, department):
+#         super().__init__(name, salary)
+#         self.department = department
+    
+#     def show_info(self):
+#         return super().show_info() + f', Department: {self.department}'
+
+# Hieu = Manager("Trung Hiếu", 5000, "Tech")
+# print(Hieu.show_info())
