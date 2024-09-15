@@ -1,0 +1,1 @@
+Buổi 2: Kế thừa trong lập trình hướng đối tượng (OOP)
