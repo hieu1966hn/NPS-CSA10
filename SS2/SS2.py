@@ -34,25 +34,81 @@
 
 
 #### Bài thực hành với kế thừa:
-class Animal:
-    def __init__(self, name, species):
-        self.name = name
-        self.species = species
+# class Animal:
+#     def __init__(self, name, species):
+#         self.name = name
+#         self.species = species
     
-    def make_sound(self):
-        return f'{self.name} makes a sound'
+#     def make_sound(self):
+#         return f'{self.name} makes a sound'
         
-class Sheep(Animal):
-    def __init__(self, name, species, breed):
-        ## Gọi làm hàm khởi tạo của lớp cha và kế thừa chúng: super()
-        super().__init__(name, species)
-        self.breed = breed
+### Tạo ra một bản thiết kế cừu từ Animal
+# class Sheep(Animal):
+#     def __init__(self, name, species, breed):
+#         ## Gọi làm hàm khởi tạo của lớp cha và kế thừa chúng: super()
+#         super().__init__(name, species)
+#         self.breed = breed
 
-    ### Mặc định có phương thức make_sound(). tuy nhiên muốn bổ sung thêm 
-    def make_sound(self):
-        ## Sử dụng phương thức kế thừa super().phương_thức muốn kế thừa
-        return super().make_sound() + f". {self.name} Beeee"
+#     ### Mặc định có phương thức make_sound(). tuy nhiên muốn bổ sung thêm 
+#     def make_sound(self):
+#         ## Sử dụng phương thức kế thừa super().phương_thức muốn kế thừa
+#         return super().make_sound() + f". {self.name} Beeee"
+    
+### Tạo ra một bản thiết kế chó từ Animal
+# class Dog(Animal):
+#     def __init__(self, name, species, breed):
+#         ## Gọi làm hàm khởi tạo của lớp cha và kế thừa chúng: super()
+#         super().__init__(name, species)
+#         self.breed = breed
+
+#     ### Mặc định có phương thức make_sound(). tuy nhiên muốn bổ sung thêm 
+#     def make_sound(self):
+#         ## Sử dụng phương thức kế thừa super().phương_thức muốn kế thừa
+#         return super().make_sound() + f". {self.name} Barks"
+
+
+
 
 ### Tạo một đối tượng cừu: 
-sheep1 = Sheep("Blue", "Sheep", "Cừu Beltex")
-print(sheep1.make_sound())
+# sheep1 = Sheep("Blue", "Sheep", "Cừu Beltex")
+# print(sheep1.make_sound())
+
+# ### Tạo một đối tượng chó: 
+# dog1 = Dog("mic", "Dog", "Béc giê")
+# print(dog1.make_sound())
+
+
+
+######### Kế thừa nhiều lớp
+class Bird:
+    def __init__(self, name):
+        self.name = name
+    
+    def eat(self):
+        return f'{self.name} is eating'
+
+
+class Flyer:
+    def __init__(self, wing_span):
+        self.wing_span = wing_span
+    
+    def fly(self):
+        return f"fly with a wingspan of {self.wing_span} meters"
+
+class FlyingBird(Bird, Flyer):
+    def __init__(self, name, wing_span):
+        ### Gọi hàm khởi tạo của cả 2 lớp
+        Bird.__init__(self, name)
+        Flyer.__init__(self, wing_span)
+
+    def show_info(self):
+        return f'{self.name} can ' + Flyer.fly(self)
+
+
+
+### sử dụng lớp FlyingBird
+eagle = FlyingBird("Eagle", 2.5)
+
+print(eagle.eat())
+print(eagle.fly())
+print(eagle.show_info())
