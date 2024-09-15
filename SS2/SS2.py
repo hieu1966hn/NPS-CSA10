@@ -80,35 +80,58 @@
 
 
 ######### Kế thừa nhiều lớp
-class Bird:
-    def __init__(self, name):
-        self.name = name
+# class Bird:
+#     def __init__(self, name):
+#         self.name = name
     
-    def eat(self):
-        return f'{self.name} is eating'
+#     def eat(self):
+#         return f'{self.name} is eating'
 
 
-class Flyer:
-    def __init__(self, wing_span):
-        self.wing_span = wing_span
+# class Flyer:
+#     def __init__(self, wing_span):
+#         self.wing_span = wing_span
     
-    def fly(self):
-        return f"fly with a wingspan of {self.wing_span} meters"
+#     def fly(self):
+#         return f"fly with a wingspan of {self.wing_span} meters"
 
-class FlyingBird(Bird, Flyer):
-    def __init__(self, name, wing_span):
-        ### Gọi hàm khởi tạo của cả 2 lớp
-        Bird.__init__(self, name)
-        Flyer.__init__(self, wing_span)
+# class FlyingBird(Bird, Flyer):
+#     def __init__(self, name, wing_span):
+#         ### Gọi hàm khởi tạo của cả 2 lớp
+#         Bird.__init__(self, name)
+#         Flyer.__init__(self, wing_span)
 
-    def show_info(self):
-        return f'{self.name} can ' + Flyer.fly(self)
+#     def show_info(self):
+#         return f'{self.name} can ' + Flyer.fly(self)
 
 
 
-### sử dụng lớp FlyingBird
-eagle = FlyingBird("Eagle", 2.5)
+# ### sử dụng lớp FlyingBird
+# eagle = FlyingBird("Eagle", 2.5)
 
-print(eagle.eat())
-print(eagle.fly())
-print(eagle.show_info())
+# print(eagle.eat())
+# print(eagle.fly())
+# print(eagle.show_info())
+
+
+### chữa bài luyện tập số 1
+class Rectangle:
+    def __init__(self, lenght, width):
+        self.lenght = lenght
+        self.width = width
+    
+    def area(self):
+        return self.lenght * self.width
+    
+    def perimeter(self):
+        return (self.lenght + self.width) * 2
+    
+class Square(Rectangle):
+    def __init__(self, side):
+        super().__init__(side, side)
+
+    
+### test hình vuông
+s = Square(5)
+print(s.area())
+print(s.perimeter())
