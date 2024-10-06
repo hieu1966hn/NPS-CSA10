@@ -99,13 +99,13 @@ class Snake:
 class Food: 
     def __init__(self):
         self.size = 10
-        self.position = [random.randrange(1 , screen_width - 5), 
-                         random.randrange(1, screen_height - 5)]
+        self.position = [random.randrange(1 , (screen_width // self.size)) * self.size,
+                        random.randrange(1, (screen_height // self.size)) * self.size]
 
     ### Sinh vị trí mới cho thức ăn
     def spawn(self):
-        self.position = [random.randrange(1 , screen_width - 5), 
-                         random.randrange(1, screen_height - 5)]
+        self.position = [random.randrange(1 , (screen_width // self.size)) * self.size,
+                        random.randrange(1, (screen_height // self.size)) * self.size]
 
     ### Vẽ thức ăn lên màn hình
     def draw(self, screen):
