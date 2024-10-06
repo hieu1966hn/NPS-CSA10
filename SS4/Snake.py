@@ -1,6 +1,7 @@
 #### Nhúng các thư viện cần có để làm game
 import pygame
 import sys
+import random
 
 ### Khởi tạo game
 pygame.init()
@@ -65,17 +66,36 @@ class Snake:
     
 
 
-        
+### Lớp food đại diện cho thức ăn của rắn
+class Food: 
+    def __init__(self):
+        self.size = 10
+        self.position = [random.randrange(1 , screen_width - 5), 
+                         random.randrange(1, screen_height - 5)]
+
+    ### Sinh vị trí mới cho thức ăn
+    def spawn(self):
+        self.position = [random.randrange(1 , screen_width - 5), 
+                         random.randrange(1, screen_height - 5)]
+
+    ### Vẽ thức ăn lên màn hình
+    def draw(self, screen):
+        pygame.draw.rect(screen, red,pygame.Rect(self.position[0],self.position[1], self.size, self.size))
+
+
 
 ## Hàm chính của trò chơi
 def main():
     ## Khởi tạo rắn
     snake = Snake()
 
+    ## Khởi tạo thức ăn
+    food = Food()
 
     #Điểm số của trò chơi
     score = 0
 
+    ### Chạy vòng lặp để kiểm tra sự kiện bấm phím của người chơi
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -100,6 +120,7 @@ def main():
         ### Vẽ mọi thứ lên màn hình
         screen.fill(black)
         snake.draw(screen)
+        food.draw(screen)
 
         ### Cập nhật màn hình
         pygame.display.update()
