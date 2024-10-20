@@ -14,6 +14,6 @@ Hệ thống quản lý dữ liệu (DBMS): Nơi tương tác giữa người d�
 
 Dữ liệu + Hệ thống quản lý dữ liệu = Cơ sở dữ liệu
 
-CSDL Quan hệ: 
+CSDL Quan hệ
 
 
