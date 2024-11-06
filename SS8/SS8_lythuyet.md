@@ -45,7 +45,7 @@ SELECT table1.col1, table2.col2
 FROM table1
 FULL JOIN table2
 ON table1.sharedCol = table2.sharedCol;
-- Ví dụ: Lấy ra dan sách tất cả học sinh và tất cả khóa học, dù học sinh không tham gia khóa học hay khóa học không có học sinh.
+- Ví dụ: Lấy ra danh sách tất cả học sinh và tất cả khóa học, dù học sinh không tham gia khóa học hay khóa học không có học sinh.
 
 5. WITH 
 - Công dụng: Dùng để định nghĩa một truy vấn phụ (subquery) tạm thời, giúp cải thiện sự rõ ràng và tối ưu hiệu năng khi làm việc với truy vấn phức tạp.
