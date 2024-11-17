@@ -23,7 +23,7 @@ data_student_csa10 = {
 
 ### Chuyển data => DF 
 df_csa10 = pd.DataFrame(data_student_csa10)
-# print(df_csa10['Name']) 
+print(df_csa10) 
 
 ###### Ví dụ với iloc
 ## Truy xuất 1 dòng (hàng)
@@ -49,11 +49,36 @@ df_csa10 = pd.DataFrame(data_student_csa10)
 
 ####### Thực hành bài tập cơ bản
 ### 1. Tìm các học sinh có score >= 5
-rows = df_csa10['Score'] >= 5 
+# rows = df_csa10['Score'] >= 5 
 # => rows là một Series chứa các giá trị boolean với True & False 
 # lần lượt tương ứng với các dòng thỏa & không thỏa điều kiện.
 
-print(df_csa10[rows])
+# print(df_csa10[rows])
 
 
-#### Sử dụng iloc để tìm các học sinh có score >= 5
+#### 2. Sử dụng iloc để tìm các học sinh có score >= 5 (Về nhà thầy fixed và đẩy lên github)
+# result = df_csa10.iloc[df_csa10['Score'] >= 5:, [1, 3]] 
+# print(result)
+
+
+#### 3.  HIển thị thông tin chi tiết của học sinh ở dòng thứ 3
+# print("\n. Thông tin học sinh của dòng thứ 3:")
+# print(df_csa10.iloc[3]) # indexing = 3
+
+
+### 4.  Lọc học sinh có Age = 17 và Qualify = 'yes'
+# print(df_csa10[(df_csa10['Age'] == 17) &  (df_csa10['Qualify'] == 'yes')])
+
+### 5. Sắp xếp theo điểm số giảm dần
+# print(df_csa10.sort_values(by='Score', ascending=False))
+
+
+### 6. Tính điểm trung bình của tất cả học sinh: mean() => hàm tính điểm trung bình
+# print(df_csa10['Score'].mean())
+
+### 7. Thêm cột "Pass" với giá trị "Pass" nếu Score >=6 , ngược lại là "Fail"
+# df_csa10['Pass'] = df_csa10['Score'].apply(lambda x: 'Pass' if x >=6 else 'Fail')
+# print(df_csa10)
+
+### 8. Lọc học sinh có Attempts < 3 và Age > 16
+print(df_csa10[(df_csa10['Attempts'] < 3) & (df_csa10['Age'] > 16)])
