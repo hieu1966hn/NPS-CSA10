@@ -60,12 +60,12 @@ USE NorthwindFullData;
 -- ORDER BY Orders.OrderID ASC;
 
 -- 9.
-SELECT DISTINCT Customers.CustomerID, Customers.CustomerName
-FROM Customers 
-JOIN Orders ON Customers.CustomerID = Orders.CustomerID
-JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
-JOIN Products ON OrderDetails.ProductID = Products.ProductID
-WHERE Products.Category = 'Dairy Products'
-ORDER BY Customers.CustomerID ASC;
+-- SELECT DISTINCT Customers.CustomerID, Customers.CustomerName
+-- FROM Customers 
+-- JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+-- JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
+-- JOIN Products ON OrderDetails.ProductID = Products.ProductID
+-- WHERE Products.Category = 'Dairy Products'
+-- ORDER BY Customers.CustomerID ASC;
 
 
