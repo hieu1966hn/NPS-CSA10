@@ -81,4 +81,4 @@ print(df_csa10)
 # print(df_csa10)
 
 ### 8. Lọc học sinh có Attempts < 3 và Age > 16
-print(df_csa10[(df_csa10['Attempts'] < 3) & (df_csa10['Age'] > 16)])
+# print(df_csa10[(df_csa10['Attempts'] < 3) & (df_csa10['Age'] > 16)])
